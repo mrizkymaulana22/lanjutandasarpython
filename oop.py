@@ -1,4 +1,4 @@
-from controller import MahasiswaController
+from controller import StudentController
 
-a = MahasiswaController()
-a.run()
+MyApp = StudentController()
+MyApp.run()

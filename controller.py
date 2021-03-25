@@ -1,36 +1,39 @@
-from model import MahasiswaModel
-from view import MahasiswaView
+import unittest
+from model import StudentModel
+from view import StudentView
 
-class MahasiswaController(object):
-    def createMahasiswa(self):
-        view = MahasiswaView()
-        data = view.formMahasiswa()
+#Make a class of Student Controller
+class StudentController(object):
+    def create_student(self):
+        view = StudentView()
+        data = view.form_student()
 
         return data
-    def tampil(self,data):
-        view = MahasiswaView()
-        option = view.pilihPengaturan()
+
+    def show(self,data):
+        view = StudentView()
+        option = view.optional()
 
         if option == '1':
-            self.viewMahasiswa(data)
+            self.view_student(data)
         elif option == '2':
             print('stop')
         else:
             print('404 error')
-            self.tampil(data)
+            self.show(data)
 
-    def viewMahasiswa(self, data):
-        view = MahasiswaView()
-        view.tampilMahasiswa(data)
+    def view_student(self, data):
+        view = StudentView()
+        view.show_student(data)
+        self.show(data)
 
-        self.tampil(data)
     def run(self):
-        register = self.createMahasiswa()
+        register = self.create_student()
         nim = register['nim']
-        nama = register['nama']
-        alamat = register['alamat']
+        name = register['name']
+        address = register['address']
 
-        data = MahasiswaModel(nim, nama, alamat)
+        data = StudentModel(nim, name, address)
 
-        datamahasiswa = data.getAll()
-        self.tampil(datamahasiswa)
+        data_student = data.getAll()
+        self.show(data_student)

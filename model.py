@@ -1,25 +1,32 @@
-#mahasiswa
-class MahasiswaModel(object):
-    def __init__(self, nim, nama, alamat):
+#Make a class of Student Model
+class StudentModel(object):
+    def __init__(self, nim, name, address):
         self.nim = nim
-        self.nama = nama
-        self.alamat = alamat
-    def getNim(self):
+        self.name = name
+        self.address = address
+
+    def get_nim(self):
         return self.nim
-    def setNim(self, nim):
+
+    def set_nim(self, nim):
         self.nim = nim
-    def getNama(self):
-        return self.nama
-    def setNama(self, nama):
-        self.nama = nama
-    def getAlamat(self):
-        return self.alamat
-    def setAlamat(self, alamat):
-        self.alamat = alamat
+
+    def get_name(self):
+        return self.name
+
+    def set_name(self, name):
+        self.name = name
+
+    def get_address(self):
+        return self.address
+
+    def set_address(self, address):
+        self.address = address
+
     def getAll(self):
         data = {
             'nim' : '1119101746',
-            'nama' : 'iky',
-            'alamat' : 'banyuwangi'
+            'name' : 'iky',
+            'address' : 'banyuwangi'
         }
         return data
